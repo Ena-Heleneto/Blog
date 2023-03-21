@@ -1,3 +1,4 @@
+import glsl from 'vite-plugin-glsl'
 import { pwa } from './config/pwa'
 import { appDescription } from './constants/index'
 
@@ -9,7 +10,24 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@vite-pwa/nuxt',
     '@nuxt/devtools',
+    'nuxt-lodash',
   ],
+  lodash: {
+    prefix: '_',
+    prefixSkip: ['string'],
+    upperAfterPrefix: false,
+    exclude: ['map'],
+    alias: [
+      ['camelCase', 'stringToCamelCase'], // => stringToCamelCase
+      ['kebabCase', 'stringToKebab'], // => stringToKebab
+      ['isDate', 'isLodashDate'], // => _isLodashDate
+    ],
+  },
+  // nuxt.config.ts
+  sourcemap: {
+    server: true,
+    client: false,
+  },
   experimental: {
     // when using generate, payload js assets included in sw precache manifest
     // but missing on offline, disabling extraction it until fixed
@@ -18,22 +36,16 @@ export default defineNuxtConfig({
   },
   css: [
     '@unocss/reset/tailwind.css',
+    '@/styles/css/main.css',
+    '@/styles/scss/mixin.scss',
   ],
-  colorMode: {
-    classSuffix: '',
-  },
+  colorMode: { classSuffix: '' },
   nitro: {
-    esbuild: {
-      options: {
-        target: 'esnext',
-      },
-    },
-    prerender: {
-      crawlLinks: false,
-      routes: ['/'],
-      ignore: ['/hi'],
-    },
+    esbuild: { options: { target: 'esnext' } },
+    prerender: { crawlLinks: false, routes: ['/'], ignore: ['/hi'] },
   },
+  vite: { plugins: [glsl()] },
+  devServer: { port: 12138 },
   app: {
     head: {
       viewport: 'width=device-width,initial-scale=1',
