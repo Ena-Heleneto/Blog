@@ -9,10 +9,22 @@
     "lint": "eslint .",
     "postinstall": "nuxi prepare",
     "generate": "nuxi generate",
-    "start:generate": "npx serve .output/public"
+    "start:generate": "npx serve .output/public",
+    "prepare": "husky install"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  },
+  "dependencies": {
+    "gsap": "^3.11.5",
+    "three": "^0.150.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.35.3",
+    "@commitlint/cli": "^17.5.1",
+    "@commitlint/config-conventional": "^17.4.4",
     "@iconify-json/carbon": "^1.1.16",
     "@iconify-json/twemoji": "^1.1.11",
     "@nuxt/devtools": "^0.2.5",
@@ -23,8 +35,12 @@
     "@vite-pwa/nuxt": "^0.0.7",
     "@vueuse/nuxt": "^9.13.0",
     "autoprefixer": "^10.4.14",
+    "commitizen": "^4.3.0",
+    "cz-git": "^1.6.1",
     "eslint": "^8.36.0",
+    "husky": "^8.0.3",
     "lil-gui": "^0.18.1",
+    "lint-staged": "^13.2.0",
     "nuxt": "^3.3.1",
     "nuxt-lodash": "^2.4.1",
     "pinia": "^2.0.33",
@@ -33,9 +49,5 @@
     "typescript": "^4.9.5",
     "vite": "^4.2.1",
     "vite-plugin-glsl": "^1.1.2"
-  },
-  "dependencies": {
-    "gsap": "^3.11.5",
-    "three": "^0.150.1"
   }
 }

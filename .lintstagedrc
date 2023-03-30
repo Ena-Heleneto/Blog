@@ -1,0 +1,9 @@
+{
+  "*.{jsjsxtstsx}": ["eslint --fix"],
+  "{!(package)*.json*.code-snippets.!(browserslist)*rc}":
+    ["eslint --fix"],
+  "package.json": ["eslint --fix"],
+  "*.vue": ["eslint --fix"],
+  "*.{scsslessstylhtml}": ["eslint --fix"],
+  "*.md": ["eslint --fix"]
+}
