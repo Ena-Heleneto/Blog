@@ -7,5 +7,5 @@
     "*.css": "postcss"
   },
   "editor.formatOnSave": false,
-  "nuxt.isNuxtApp": true,
+  "nuxt.isNuxtApp": false,
 }

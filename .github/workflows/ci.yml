@@ -1,16 +1,15 @@
-name: CI
-
+name: HW_maintenance_Web
+run-name: HW_maintenance_Web_deploy
 on:
+  pull_request:
+    types:
+      - closed
   push:
     branches:
-      - main
-
-  pull_request:
-    branches:
-      - main
+      - dev
 
 jobs:
-  lint:
+  Build_docker:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -18,26 +17,27 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16.x
-          cache: pnpm
-
-      - name: Install
-        run: pnpm install
-
-      - name: Lint
-        run: pnpm run lint
-
-  typecheck:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2
-      - uses: actions/setup-node@v3
+      - name: Build
+        run: docker build -t blog:latest .
+      - name: Login
+        run: docker login -u cn-north-4@EOIMIMCPQ2YA9ZF0XTF0 -p d675cf352298923ad7157b0bff8c78f53daf2250520ed607c47f30f6f7d51331 swr.cn-north-4.myhuaweicloud.com
+      - name: Tag
+        run: docker tag blog:latest swr.cn-north-4.myhuaweicloud.com/abernethy-by/blog:latest
+      - name: Push
+        run: docker push swr.cn-north-4.myhuaweicloud.com/abernethy-by/blog:latest
+      - name: Deploy
+        uses: appleboy/ssh-action@v0.1.10
         with:
-          node-version: 16.x
-          cache: pnpm
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          password: ${{ secrets.SERVER_PWD }}
+          port: ${{ secrets.SERVER_PORT }}
+          script: |
+            docker login -u cn-north-4@EOIMIMCPQ2YA9ZF0XTF0 -p d675cf352298923ad7157b0bff8c78f53daf2250520ed607c47f30f6f7d51331 swr.cn-north-4.myhuaweicloud.com
+            docker pull swr.cn-north-4.myhuaweicloud.com/abernethy-by/blog:latest
+            cd /home/production/blog
+            docker images
+            docker compose up -d
+  
 
-      - name: Install
-        run: pnpm install
-
-      - name: Typecheck
-        run: pnpm run typecheck
+    

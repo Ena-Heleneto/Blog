@@ -1,7 +1,17 @@
+/*
+ * @Author: Bianyu by15242952083@outlook.com
+ * @Date: 2023-07-18 18:01:42
+ * @LastEditors: Bianyu by15242952083@outlook.com
+ * @LastEditTime: 2023-07-18 20:02:26
+ * @FilePath: \blog\uno.config.ts
+ * @Description:
+ * Copyright (c) 2023 by Bianyu email: by15242952083@outlook.com, All Rights Reserved.
+ */
 import {
   defineConfig,
   presetAttributify,
   presetIcons,
+  presetMini,
   presetTypography,
   presetUno,
   presetWebFonts,
@@ -17,17 +27,10 @@ export default defineConfig({
   presets: [
     presetUno(),
     presetAttributify(),
-    presetIcons({
-      scale: 1.2,
-    }),
+    presetIcons({ scale: 1.2 }),
     presetTypography(),
-    presetWebFonts({
-      fonts: {
-        sans: 'DM Sans',
-        serif: 'DM Serif Display',
-        mono: 'DM Mono',
-      },
-    }),
+    presetWebFonts({ fonts: { sans: 'DM Sans', serif: 'DM Serif Display', mono: 'DM Mono' } }),
+    presetMini(),
   ],
   transformers: [
     transformerDirectives(),

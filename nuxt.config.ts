@@ -2,7 +2,7 @@
  * @Author: Bianyu by15242952083@outlook.com
  * @Date: 2023-07-18 18:01:41
  * @LastEditors: Bianyu by15242952083@outlook.com
- * @LastEditTime: 2023-07-18 18:39:25
+ * @LastEditTime: 2023-07-18 19:26:32
  * @FilePath: \blog\nuxt.config.ts
  * @Description:
  * Copyright (c) 2023 by Bianyu email: by15242952083@outlook.com, All Rights Reserved.
@@ -18,6 +18,8 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@vite-pwa/nuxt',
     '@element-plus/nuxt',
+    'nuxt-mongoose',
+    ['vite-plugin-version-mark/nuxt', { ifGitSHA: true, ifShortSHA: true, ifMeta: true, ifLog: true, ifGlobal: true }],
   ],
 
   experimental: {
@@ -27,6 +29,11 @@ export default defineNuxtConfig({
     inlineSSRStyles: false,
     renderJsonPayloads: true,
     typedPages: true,
+  },
+
+  mongoose: {
+    uri: 'mongodb://by_blog_root:bianyu_blog_root@www.abernethy-by.com.:2024/blog?authMechanism=DEFAULT',
+    options: { maxPoolSize: 20, minPoolSize: 1, autoIndex: true },
   },
 
   css: [
