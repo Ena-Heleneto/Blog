@@ -2,7 +2,7 @@
  * @Author: Bianyu by15242952083@outlook.com
  * @Date: 2023-07-18 18:01:41
  * @LastEditors: Bianyu by15242952083@outlook.com
- * @LastEditTime: 2023-07-18 19:26:32
+ * @LastEditTime: 2023-07-18 21:05:46
  * @FilePath: \blog\nuxt.config.ts
  * @Description:
  * Copyright (c) 2023 by Bianyu email: by15242952083@outlook.com, All Rights Reserved.
@@ -36,25 +36,13 @@ export default defineNuxtConfig({
     options: { maxPoolSize: 20, minPoolSize: 1, autoIndex: true },
   },
 
-  css: [
-    '@unocss/reset/tailwind.css',
-  ],
+  css: ['@unocss/reset/tailwind.css'],
 
-  colorMode: {
-    classSuffix: '',
-  },
+  colorMode: { classSuffix: '' },
 
   nitro: {
-    esbuild: {
-      options: {
-        target: 'esnext',
-      },
-    },
-    prerender: {
-      crawlLinks: false,
-      routes: ['/'],
-      ignore: ['/hi'],
-    },
+    esbuild: { options: { target: 'esnext' } },
+    prerender: { crawlLinks: false, routes: [], ignore: [] },
   },
 
   app: {
@@ -75,8 +63,6 @@ export default defineNuxtConfig({
 
   pwa,
 
-  devtools: {
-    enabled: true,
-  },
+  devtools: { enabled: true },
   elementPlus: { },
 })
