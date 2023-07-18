@@ -1,5 +1,5 @@
-name: HW_maintenance_Web
-run-name: HW_maintenance_Web_deploy
+name: blog
+run-name: blog_deploy
 on:
   pull_request:
     types:
