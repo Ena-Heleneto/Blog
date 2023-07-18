@@ -1,3 +1,12 @@
+/*
+ * @Author: Bianyu by15242952083@outlook.com
+ * @Date: 2023-07-18 18:01:41
+ * @LastEditors: Bianyu by15242952083@outlook.com
+ * @LastEditTime: 2023-07-18 18:39:25
+ * @FilePath: \blog\nuxt.config.ts
+ * @Description:
+ * Copyright (c) 2023 by Bianyu email: by15242952083@outlook.com, All Rights Reserved.
+ */
 import { pwa } from './config/pwa'
 import { appDescription } from './constants/index'
 
@@ -8,6 +17,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/color-mode',
     '@vite-pwa/nuxt',
+    '@element-plus/nuxt',
   ],
 
   experimental: {
@@ -61,4 +71,5 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
+  elementPlus: { },
 })
