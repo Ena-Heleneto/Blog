@@ -14,8 +14,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.8",
-    "@iconify-json/carbon": "^1.1.18",
-    "@iconify-json/twemoji": "^1.1.11",
+    "@iconify/json": "^2.2.92",
     "@nuxt/devtools": "^0.6.7",
     "@nuxtjs/color-mode": "^3.3.0",
     "@pinia/nuxt": "^0.4.11",
@@ -24,6 +23,7 @@
     "@vite-pwa/nuxt": "^0.1.0",
     "@vueuse/nuxt": "^10.2.1",
     "consola": "^3.2.3",
+    "element-plus": "^2.3.8",
     "eslint": "^8.45.0",
     "nuxt": "^3.6.3",
     "pinia": "^2.1.4",
@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@element-plus/nuxt": "^1.0.5",
+    "@nuxtjs/i18n": "8.0.0-beta.13",
     "nuxt-mongoose": "^0.0.9"
   }
 }

@@ -1,9 +1,9 @@
 /*
  * @Author: Bianyu by15242952083@outlook.com
  * @Date: 2023-07-18 18:01:41
- * @LastEditors: Bianyu by15242952083@outlook.com
- * @LastEditTime: 2023-07-18 21:05:46
- * @FilePath: \blog\nuxt.config.ts
+ * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @LastEditTime: 2023-07-19 18:52:27
+ * @FilePath: \Blog\nuxt.config.ts
  * @Description:
  * Copyright (c) 2023 by Bianyu email: by15242952083@outlook.com, All Rights Reserved.
  */
@@ -20,6 +20,7 @@ export default defineNuxtConfig({
     '@element-plus/nuxt',
     'nuxt-mongoose',
     ['vite-plugin-version-mark/nuxt', { ifGitSHA: true, ifShortSHA: true, ifMeta: true, ifLog: true, ifGlobal: true }],
+    '@nuxtjs/i18n',
   ],
 
   experimental: {
@@ -65,4 +66,6 @@ export default defineNuxtConfig({
 
   devtools: { enabled: true },
   elementPlus: { },
+
+  i18n: { vueI18n: './i18n.config.ts' },
 })
