@@ -1,8 +1,8 @@
 <!--
  * @Author: Bianyu by15242952083@outlook.com
  * @Date: 2023-07-18 19:40:28
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-07-19 19:36:36
+ * @LastEditors: Abernethy-BY by15242952083@outlook.com
+ * @LastEditTime: 2023-07-19 19:52:33
  * @FilePath: \Blog\components\common\TheFooter.vue
  * @Description:
  * Copyright (c) 2023 by Bianyu email: by15242952083@outlook.com, All Rights Reserved.
@@ -26,7 +26,7 @@ const footerNavigationList = ref<FooterNavigationList[]>([
     </div>
     <div class="w-1/2" flex flex-col items-center justify-center>
       <span>©2023 Bianyu Abernethy-BY</span>
-      <a href="http://beian.miit.gov.cn/" target="_blank">辽ICP备2023001138号-1</a>
+      <a href="http://beian.miit.gov.cn/" target="_blank">abernethy-by.com、辽ICP备2023001138号-1</a>
     </div>
   </div>
 </template>
